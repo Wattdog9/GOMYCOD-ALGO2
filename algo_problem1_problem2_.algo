@@ -1,0 +1,55 @@
+// Problem 1: Finding the sum of distinct elements from two sets
+// Input: set1, set2 (arrays containing elements)
+// Output: sum (sum of distinct elements from set1 and set2)
+
+sum = 0
+distinctElements = []
+
+// Iterate over elements in set1
+for i = 0 to length(set1) - 1 do
+    // If element is not present in distinctElements
+    if not contains(distinctElements, set1[i]) then
+        // Add element to distinctElements
+        add(set1[i], distinctElements)
+        // Add element to sum
+        sum = sum + set1[i]
+    end if
+end for
+
+// Iterate over elements in set2
+for i = 0 to length(set2) - 1 do
+    // If element is not present in distinctElements
+    if not contains(distinctElements, set2[i]) then
+        // Add element to distinctElements
+        add(set2[i], distinctElements)
+        // Add element to sum
+        sum = sum + set2[i]
+    end if
+end for
+
+// Output the sum
+output sum
+
+
+// Problem 2: Checking for orthogonality of vectors
+// Input: vectors (a 2D array containing vectors)
+// Output: orthogonalPairs (array containing pairs of orthogonal vectors)
+
+orthogonalPairs = []
+
+// Iterate over vectors
+for i = 0 to length(vectors) - 2 do
+    for j = i + 1 to length(vectors) - 1 do
+        // Calculate dot product using dot_product procedure
+        dotProduct = dot_product(vectors[i], vectors[j])
+        
+        // If dot product is 0, vectors are orthogonal
+        if dotProduct = 0 then
+            // Add pair (vectors[i], vectors[j]) to orthogonalPairs
+            add([vectors[i], vectors[j]], orthogonalPairs)
+        end if
+    end for
+end for
+
+// Output orthogonalPairs
+output orthogonalPairs
